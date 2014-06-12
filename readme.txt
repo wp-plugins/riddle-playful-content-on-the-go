@@ -1,5 +1,5 @@
 === riddle playful content on the go ===
-Contributors: riddle,moertenschlag
+Contributors: moertenschlag
 Donate link: http://riddle.com
 Tags: riddle,quizzes,tests, iq, list,trivia, playful, pop
 Requires at least: 3.0.1
