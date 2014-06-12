@@ -45,10 +45,10 @@ This section describes how to install the plugin and get it working.
 
 Something missing on your site? 
 You can't find a specific riddle to tickle your fancy or cover your favorite subject? 
-Perhaps you need a riddle to test people's Gaelic language skills? Or a top 10 list about the most underrated designers at New York’s fashion week? 
+Perhaps you need a riddle to test people's Gaelic language skills? Or a top 10 list about the most underrated designers at New York's fashion week? 
 No worries, we got you covered. You can create your own riddles as long as you stick to our riddle guidelines (essentially no porn, hate or spam riddles). 
 Login and click the big + icon on the top right. You can create polls, hot or not comparisons, quizzes and top 10 lists. 
-They each come with a handy little “how to” help guide to get you started. 
+They each come with a handy little "how to" help guide to get you started. 
 The riddles you create will look awesome on your own web site or blog. So go ahead use Riddle to create interactive fun for your readers, friends and family.
 
 = Does this plugin has negative effects to the performance of my website? =
