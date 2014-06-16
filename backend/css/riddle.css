@@ -1,0 +1,72 @@
+#riddle_area .riddle_item {
+	float: left;
+	width: 18%;
+	padding-right: 1%;
+    border: 1px solid #CCCCCC;
+    margin: 3px;
+    padding: 3px;
+}
+@media (min-width: 1251px) and (max-width: 1450px) {
+	#riddle_area .riddle_item {
+		width: 24%;
+		padding-right: 1%;
+	}
+} /* 1024 */
+@media (min-width: 921px) and (max-width: 1250px) {
+	#riddle_area .riddle_item {
+		width: 30%;
+		padding-right: 1%;
+	}
+} /* 1024 */
+
+@media (min-width: 721px) and (max-width: 920px) {
+	#riddle_area .riddle_item {
+		width: 32%;
+		padding-right: 1%;
+	}
+} /* 1024 */
+
+@media (max-width: 768px) {
+	#riddle_area .riddle_item {
+		width: 100%;
+		padding-right: 0%;
+	}
+} /* 768 */
+
+
+#riddle_area .riddle_item  h3 {
+	height: 65px;
+	overflow:hidden;
+	cursor: pointer;
+}
+
+#riddle_area .riddle_trendings {
+	position: relative;
+}
+#riddle_area .thumbnail {
+	text-align:center;
+}
+#riddle_area .thumbnail > img {
+    max-width: 100%;
+}
+
+.riddleplugin pre {
+	font-family: inherit;
+	    word-wrap: break-word;
+}
+
+.riddleplugin .riddlelogo {
+	float: right;
+}
+.riddleplugin .riddleheader {
+	background-color: #35B5EB
+}
+.riddleheader {
+    color: #FFFFFF;
+    height: 90px;
+    padding: 10px;
+}
+.riddleheader h2 {
+	color: white;
+	line-height: 90px;
+}
