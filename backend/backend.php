@@ -4,7 +4,7 @@ function riddle_list () {
 	global $rservername;
 	echo "<div class='wrap riddleplugin'>";
 	echo "<div class='riddleheader'>";
-	echo "<div class='riddlelogo'><img src='".plugins_url() ."/riddle/backend/images/logo.png'></div>";
+	echo "<div class='riddlelogo'><img src='".plugins_url("/images/logo.png", __FILE__ )."'></div>";
 	echo "<h2>Riddle - HOW TO</h2>";
 	echo "</div>";
 	echo "<pre>";
@@ -51,7 +51,7 @@ function riddle_metabox() {
 					echo "  <div class='thumbnail'><img src='".$json->rimageurl."'></div>";
 				} // then
 				else {
-					echo "  <div class='thumbnail'><img src='".(plugins_url() . '/riddle/backend/images/riddle_600x400.jpg')."'></div>";
+					echo "  <div class='thumbnail'><img src='".plugins_url('/images/riddle_600x400.jpg', __FILE__ )."'></div>";
 				} // else
 				echo " </div>";
 				echo "</a>";
@@ -72,10 +72,10 @@ add_action( 'add_meta_boxes', function() {
 add_action( 'save_post', 'riddle_meta_save' );
 add_action('admin_enqueue_scripts', function ($hook) {
     global $page_handle;
-	wp_enqueue_style( 'portfolio-admin-style', (plugins_url() . '/riddle/backend/css/riddle.css'), false, '1.0.0' );
+	wp_enqueue_style( 'portfolio-admin-style', plugins_url('/css/riddle.css', __FILE__ ), false, '1.0.0' );
     if ( ($hook == 'post.php') || ($hook == 'post-new.php') || ($hook == 'page.php') || ($hook == 'page-new.php') || ($_GET['page'] == $page_handle) ) {
         
-		wp_enqueue_script( 'portfolio-admin-script', (plugins_url() . '/riddle/backend/js/riddle.js'), false, '1.0.0' );
+		wp_enqueue_script( 'portfolio-admin-script', plugins_url('/js/riddle.js', __FILE__ ), false, '1.0.0' );
     }
 });
 add_action('admin_menu', function() {
