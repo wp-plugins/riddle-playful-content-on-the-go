@@ -1,5 +1,22 @@
 <?php
 $rservername = "www.riddle.com";
+
+function riddle_loadremote($url) {
+	$ch = curl_init();
+
+	// Set the url, number of GET vars, GET data
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_POST, false);
+	//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+	// Execute request
+	$result = curl_exec($ch);
+	return $result;
+}
+
 function riddle_list () { 
 	global $rservername;
 	echo "<div class='wrap riddleplugin'>";
@@ -8,7 +25,7 @@ function riddle_list () {
 	echo "<h2>Riddle - HOW TO</h2>";
 	echo "</div>";
 	echo "<pre>";
-	echo file_get_contents('http://'.$rservername.'/WordpressHelp2');
+	echo riddle_loadremote('http://'.$rservername.'/WordpressHelp2');// file_get_contents('http://'.$rservername.'/WordpressHelp2');
 	echo "</pre></div>";
 }
 
@@ -32,7 +49,7 @@ function riddle_meta_save( $post_id ) {
 
 function riddle_metabox() {
 	global $rservername;
-	$riddle_meta = get_post_meta( $post->ID );
+	$riddle_meta = get_post_meta( $post->ID , null);
     ?>
  
     <div id="riddle_area">
@@ -41,7 +58,8 @@ function riddle_metabox() {
 		</div>
 		<div class="riddle_trendings">
 		<?php 
-			$content = file_get_contents("http://".$rservername."/Api/Trends");
+			//$content = file_get_contents("http://".$rservername."/Api/Trends");
+			$content = riddle_loadremote("http://".$rservername."/Api/Trends");
 			$jsons = json_decode($content);
 			foreach ($jsons->trends as $json) {
 				echo "<a href='javascript:void(0);' class='riddle_click' data_game='".$json->data_game."'>";
