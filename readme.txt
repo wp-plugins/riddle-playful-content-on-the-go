@@ -60,6 +60,11 @@ No, the content of riddle is loaded absolutely asynchronously.
 We require at least Wordpress version 3.0.1 and a connection to our servers at riddle.com to keep your system always up to date
 with the newest tests.
 
+
+= Which PHP version is required? =
+
+Currently we require at least 5.3. If you are using older versions please contact us for assistance.
+
 == Screenshots ==
 1. overview of riddle.com
 2. personality design
