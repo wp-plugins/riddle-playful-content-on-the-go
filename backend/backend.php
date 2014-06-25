@@ -1,6 +1,6 @@
 <?php
 $rservername = "www.riddle.com";
-function riddle_list () {
+function riddle_list () { 
 	global $rservername;
 	echo "<div class='wrap riddleplugin'>";
 	echo "<div class='riddleheader'>";
@@ -63,23 +63,23 @@ function riddle_metabox() {
  
     <?php
 }
-
-add_action( 'add_meta_boxes', function() {
-	add_meta_box( 'riddle_meta', __( 'Riddle', 'riddle' ), function() {
-		riddle_metabox(); 
-	}, "post" );
-});
+function riddleclosure1() {
+	add_meta_box( 'riddle_meta', __( 'Riddle', 'riddle' ), 'riddle_metabox', "post" );
+}
+add_action( 'add_meta_boxes', 'riddleclosure1');
 add_action( 'save_post', 'riddle_meta_save' );
-add_action('admin_enqueue_scripts', function ($hook) {
+function riddleclosure2($hook) {
     global $page_handle;
 	wp_enqueue_style( 'portfolio-admin-style', plugins_url('/css/riddle.css', __FILE__ ), false, '1.0.0' );
     if ( ($hook == 'post.php') || ($hook == 'post-new.php') || ($hook == 'page.php') || ($hook == 'page-new.php') || ($_GET['page'] == $page_handle) ) {
         
 		wp_enqueue_script( 'portfolio-admin-script', plugins_url('/js/riddle.js', __FILE__ ), false, '1.0.0' );
     }
-});
-add_action('admin_menu', function() {
+}
+add_action('admin_enqueue_scripts', 'riddleclosure2');
+ function riddleclosure3 () {
 	global $rservername;
 	add_menu_page('Riddle', 'Riddle', 10, __FILE__, 'riddle_list', "//".$rservername."/files/images/riddle_16x16.png");
-});
+}
+add_action('admin_menu','riddleclosure3');
 ?>
