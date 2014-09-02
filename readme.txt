@@ -8,7 +8,7 @@ Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Playful profound personality quizzes and more. A blogger's best friend, Riddles are free to integrate on your blog with just a click.
+A blogger's best friend - Riddle's quizzes and lists are free to use on your blog with just a click. Pick any of ours - or create your own!
 
 == Description ==
 
@@ -93,4 +93,3 @@ Ordered list:
 1. Embed single posts with short codes of riddle.com
 2. Add the newest riddles directly within backend post editor
 3. Works on smartphones, tablets, laptops and desktops
-
