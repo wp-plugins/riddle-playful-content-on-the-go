@@ -85,7 +85,7 @@
  
  #text_searchRiddle{
      
-     width: 75%;
+     width: 45%;
      height: 50px;
           max-width: 860px;
  }
@@ -161,7 +161,7 @@
   .addedRiddlePost{
      
      width: 90%;
-     height: 210px;
+        height: 275px;
      float: left;
      border-bottom: 1px #CCCCCC solid;
      padding-bottom: 20px;
@@ -175,7 +175,7 @@
    .addedRiddlePost_{
      
      width: 90%;
-     height: 210px;
+     height: 275px;
      float: left;
      border-bottom: 1px #CCCCCC solid;
      padding-bottom: 30px;
@@ -185,7 +185,7 @@
  .addedRiddlePost1_{
      
      width: 90%;
-     height: 210px;
+     height: 275px;
      float: left;
      border-bottom: 1px #CCCCCC solid;
      padding-bottom: 30px;

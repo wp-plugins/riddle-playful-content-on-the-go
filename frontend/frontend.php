@@ -41,27 +41,18 @@ function build_iframe_widget($params) {
 	if ($params["src"] == null || $params["src"] == "") {
 		return "<div'>src attribute is missing</div>";
 	} // then
-	$w = $params["width"];
+	$w = $params["data_width"];
 	if ($w == null || $w == "") {
 		$w = "100%";
 	} // then
-	$h = $params["height"];
+	$h = $params["data_height"];
 	if ($h == null || $h == "") {
-		$h = "255px";
+		$h = "100%";
 	} // then
-        $o = $params["ohref"];
-	if ($o == null || $o == "") {
-		$o = "/Embed/List/preview";
-	} // then
-        $s = $params["style"];
-	if ($s == null || $s == "") {
-		$s = "border: medium none; width: 100%; height: 255px;";
-	} // then
+
+	return '<div    class="riddle_list"  data-width="'.$w.'" data-height="'.$h.'" data-game="'.$params['src'].'" > <script type="text/javascript" src="//www.riddle.com/files/js/embed.js?qvs=2.1"></script>';
         
-	return '<iframe class="preview" width="'.$w.'" height="'.$h.'" src="'.$params['src'].'" ohref="'.$o.'" style="'.$s.'"></iframe>';
-        
-      //  
-}
+        }
 add_shortcode('postriddle', 'build_postriddle');
 add_shortcode('riddlelist', 'build_iframe_widget');
 

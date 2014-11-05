@@ -3,18 +3,23 @@
     
 wp_enqueue_script( 'preview-script', plugins_url('/js/prev.js', __FILE__ ), false, '1.0.0' );
    wp_enqueue_script( 'zClip-script', plugins_url('/js/zClip.js', __FILE__ ), false, '1.0.0' );
+
 function riddle_search() {
     
     echo '<div id="rid_Container">';
+    
+ 
     echo '<h1 style="margin-top: 30px; margin-bottom: 30px; ">Search Riddle</h1>';
       echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
         echo 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ';
         echo '</div>';  
     echo '<form method="POST">';
     echo '<input type="text" id="text_searchRiddle" name="text_searchRiddle">';
+    echo ' <select name="lang" style="height: 50px; width: 10%; margin-bottom: 2px;"> <option value="en-US">English</option> <option value="de-DE">Deutsch</option> </select>';
     echo '<input type="submit" id="sub_searchRiddle" name="sub_searchRiddle" value="Search Riddle" class="button" >';
-    echo '</form>';
     
+    echo '</form>';
+   
     
       $option = rid_getPages();
       showSearchedRiddles(0); 
@@ -110,11 +115,11 @@ function showSearchedRiddles($ridID){
         }
         $f .= '<div id="textRidSearch">'. htmlspecialchars($json->rname) .' </div>';
     //     $postriddleCode = getPostriddleCode($json->uid, "100%", "auto");
-        $f .= '<form method="POST" name="form_'.$json->uid.'"><input type="button" class="button" style="width: 180px; position: relative; left: 2px; margin-bottom: 1px;" onclick="rid_getShortcode(\''.$json->uid.'\')"  value="Get Shortcode" name="rid_shortcode"><input type="hidden" name="ridSearch_id" value="'.$json->uid.'"><input type="submit" style="width: 180px; margin-top: 5px; "class="button" value="Create Riddlepost" name="rid_post" id="rid_post"> <input type="button" class="button" style="width: 87px;  margin-top: 5px;" id="rid_post"  onclick="rid_ShowAddButton(\'addPost_'.$json->uid.'\')"  value="Add to Post" name="rid_postAdd"> <input type="button" class="button" style="width: 87px;    margin-top: 5px;" id="rid_post" value="Add to Page" name="rid_page" onclick="rid_ShowAddButton(\'addPage_'.$json->uid.'\')">';
+        $f .= '<form method="POST" name="form_'.$json->uid.'"><input type="button" class="button" style="width: 180px; position: relative; left: 2px; margin-bottom: 1px;" onclick="rid_getShortcode(\''.$json->uid.'\')"  value="Get Shortcode" name="rid_shortcode"><input type="hidden" name="ridSearch_id" value="'.$json->uid.'"><input type="button" class="button" style="width: 87px;  margin-top: 5px;" id="rid_post"  onclick="rid_ShowAddButton(\'addPost_'.$json->uid.'\')"  value="Add to Post" name="rid_postAdd"> <input type="button" class="button" style="width: 87px;    margin-top: 5px;" id="rid_post" value="Add to Page" name="rid_page" onclick="rid_ShowAddButton(\'addPage_'.$json->uid.'\')">'; //<input type="submit" style="width: 180px; margin-top: 5px; "class="button" value="Create Riddlepost" name="rid_post" id="rid_post">   
         //if(($optionPage != "" || $optionPage != NULL) && ($ridID == $json->uid)) {
             $f .= '<div id="addPage_'.$json->uid.'" class="ridAddButtonHidden">';
               $option = rid_getPages();
-            $f.= $option;
+            $f.= $option;  
             $f.= '<input type="submit" class="button" style=" margin-top: 5px; width:42px" value="Add!" name="rid_page_implement"> ';
             $f .= '</div>';
             

@@ -212,6 +212,16 @@ $form .= '<label><input type="radio" name="openLinks" value="no" id="openLinksYe
 $form .= '</td>';
 $form .= '</tr>';
 
+$form .= '<tr><td>';
+   $form .= '<b>Size</b>';
+$form .= '</td><td>';
+
+if( is_array($rid_metadata)){
+
+    $form .= '<label> Width <input name="ridWidthCat"type ="text" value="'.$rid_metadata[$b]["ridWidth"].'"style="width: 70px"></label>';
+      $form .= '<label> Height <input name="ridHeightCat"type ="text" style="width: 70px" value="'.$rid_metadata[$b]["ridHeight"].'"></label>';
+}
+$form .= '</td></tr>';
 $form .= '<tr  > <td style="padding-top: 0px; width="auto" colspan="2" >';
 $form .= ' <input type="hidden" name="rid_hidFr" id ="rid_hidFr" value="' . $rid_frameSource . '">';
 $form .= ' <input type="hidden" name="rid_hidID" id ="rid_hidID" value="' . $post->ID . '">';

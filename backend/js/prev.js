@@ -205,6 +205,7 @@ function rid_ShowForm(nrOfPost){
 
    jQuery('.rid_yourCatPost_').css('visibility', 'hidden');
       jQuery('.rid_yourCatPost1_').css('visibility', 'hidden');
+       jQuery('#rid_yourCatPost2__'+nrOfPost).css('visibility', 'hidden');
       jQuery('#rid_yourCatPost1__'+nrOfPost).css('visibility', 'hidden');
    jQuery('#rid_yourCatPost_'+nrOfPost).css('visibility', 'visible');
   jQuery('.addedRiddle__').css('background-color', 'transparent');
@@ -216,6 +217,7 @@ function rid_ShowForm(nrOfPost){
 function rid_ShowFormPage(nrOfPost){
  jQuery('.rid_yourCatPost_').css('visibility', 'hidden');
  jQuery('.rid_yourCatPost1_').css('visibility', 'hidden');
+  jQuery('#rid_yourCatPost2__'+nrOfPost).css('visibility', 'hidden');
  jQuery('#rid_yourCatPost1__'+nrOfPost).css('visibility', 'hidden');
    jQuery('#rid_yourCatPost__'+nrOfPost).css('visibility', 'visible');
   jQuery('.addedRiddle__').css('background-color', 'transparent');
@@ -227,10 +229,12 @@ function rid_ShowFormPage(nrOfPost){
 function rid_ShowFormPost(nrOfPost){
  jQuery('.rid_yourCatPost_').css('visibility', 'hidden');
   jQuery('.rid_yourCatPost1_').css('visibility', 'hidden');
-   jQuery('#rid_yourCatPost1__'+nrOfPost).css('visibility', 'visible');
+   jQuery('#rid_yourCatPost1__'+nrOfPost).css('visibility', 'hidden');
+    jQuery('#rid_yourCatPost2__'+nrOfPost).css('visibility', 'visible');
   jQuery('.addedRiddle1__').css('background-color', 'transparent');
   jQuery('.addedRiddle__').css('background-color', 'transparent');
-   jQuery('#rid_yourCatPostNav1__'+nrOfPost).css('background-color', '#bbb');
+     jQuery('#rid_yourCatPostNav1__'+nrOfPost).css('background-color', 'transparent');
+   jQuery('#rid_yourCatPostNav2__'+nrOfPost).css('background-color', '#bbb');
 
 }
 

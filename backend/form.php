@@ -142,7 +142,7 @@ $form = '<form name="riddle_widg_wp" method ="POST">';
 
          
         $form .= '<div id="ridCatFormBottom">';
-        $form  .= '<input class ="button" type="submit" name="rid_insertPost" value="Create Post" style="width: 150px; height: 35px; margin-top: 25px;" >  <input type="button" class ="button" name="site" style="width: 150px; height: 35px; margin-top: 25px;" value="Add to Post" onclick="rid_implementPost()"><input type="button" class ="button" name="site" style="width: 150px; height: 35px; margin-top: 25px; margin-left: 3px;" value="Add to Page" onclick="rid_implementSite()">'; //onclick="implementSite()
+        $form  .= ' <input type="button" class ="button" name="site" style="width: 150px; height: 35px; margin-top: 25px;" value="Add to Post" onclick="rid_implementPost()"><input type="button" class ="button" name="site" style="width: 150px; height: 35px; margin-top: 25px; margin-left: 3px;" value="Add to Page" onclick="rid_implementSite()">'; //<input class ="button" type="submit" name="rid_insertPost" value="Create Post" style="width: 150px; height: 35px; margin-top: 25px;" > 
 
         $form .= '<input type="submit" class ="button" name="rid_getShortcodeCat" value="Get Shortcode" style=" position: relative; left: 3px;width: 150px; height: 35px; margin-top: 25px;" >';
         
