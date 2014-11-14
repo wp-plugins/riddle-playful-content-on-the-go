@@ -50,7 +50,7 @@ function build_iframe_widget($params) {
 		$h = "100%";
 	} // then
 
-	return '<div    class="riddle_list"  data-width="'.$w.'" data-height="'.$h.'" data-game="'.$params['src'].'" > <script type="text/javascript" src="//www.riddle.com/files/js/embed.js?qvs=2.1"></script>';
+	return '<div    class="riddle_list"  data-width="'.$w.'" data-height="'.$h.'" data-game="'.$params['src'].'" ></div> <script type="text/javascript" src="//www.riddle.com/files/js/embed.js?qvs=2.1"></script>';
         
         }
 add_shortcode('postriddle', 'build_postriddle');

@@ -12,8 +12,6 @@ add_action( 'save_post', 'riddle_meta_save' );
 
 add_filter('widget_text', 'do_shortcode');
 
-
-
 $riddleResult = array();
 function riddle_loadremote($url) {
     global $riddleResult;
@@ -239,7 +237,7 @@ function prfx_meta_callback_prev(){
     $content = $content_post->post_content;
     $cont = substr($content, strpos($content, 'src=')+5);
     $arr = explode('"', $cont);
-    $PostRiddle = rid_createFrameCode($arr[0], '100%', '100%');
+    $PostRiddle = rid_createFrameCode($arr[0],  '100%', '100%');
 
     echo '<p style="width: 101.8%; margin-left: -12px;padding-right: 100px;">'.$PostRiddle['iFrameCode'].'</p>'; 
        # echo '<div style="height: 100px"></div>';
@@ -269,7 +267,7 @@ function prfx_meta_callbackpost(){
    
         for($s=0;is_array($arr2) && $s< count($arr2);$s++){    
         
-         $ridFramecode = rid_createFrameCode( $arr2[$s]['src'], $arr2[$s]['ridWidth'], $arr2[$s]['ridHeight']);
+         $ridFramecode = rid_createFrameCode( $arr2[$s]['src'], '100%', '100%');
          echo  '<p>'. $ridFramecode["iFrameCode"].'</p>';
           }
 }
@@ -291,7 +289,7 @@ function prfx_meta_callbackpage(){
    
         for($s=0;is_array($arr2) && $s< count($arr2);$s++){    
         
-         $ridFramecode = rid_createFrameCode( $arr2[$s]['src'],  $arr2[$s]['ridWidth'], $arr2[$s]['ridHeight']);
+         $ridFramecode = rid_createFrameCode( $arr2[$s]['src'],  '100%', '100%');
          echo  '<p >'. $ridFramecode["iFrameCode"].'</p>'; 
           }
 }

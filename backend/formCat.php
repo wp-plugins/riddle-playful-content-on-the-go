@@ -1,6 +1,7 @@
 <?php
 
-$rid_numitems = substr($rid_frameSource, strpos($rid_frameSource, 'numitems=') + 9, 1);
+$rid_numitems = substr($rid_frameSource, strpos($rid_frameSource, 'numitems=') + 9, 2);
+$rid_numitems = (int)$rid_numitems;
 $rid_Layout = substr($rid_frameSource, strpos($rid_frameSource, 'riddleLayout=') + 13, 1);
 $openLinks = substr($rid_frameSource, strpos($rid_frameSource, 'open=') +5, 1);
 $rid_arrTyp[0] = substr($rid_frameSource, strpos($rid_frameSource, 'riddleTypTop10=') + 15, 1);
@@ -8,7 +9,7 @@ $rid_arrTyp[1] = substr($rid_frameSource, strpos($rid_frameSource, 'riddleTypTes
 $rid_arrTyp[2] = substr($rid_frameSource, strpos($rid_frameSource, 'riddleTypQuiz=') + 14, 1);
 $rid_arrTyp[3] = substr($rid_frameSource, strpos($rid_frameSource, 'riddleTypPoll=') + 14, 1);
 $rid_arrTyp[4] = substr($rid_frameSource, strpos($rid_frameSource, 'riddleTypRhn=') + 13, 1);
-
+$rid_lang = substr($rid_frameSource, strpos($rid_frameSource, 'lang=') + 5, 5);
 for ($i = 0; $i < 5; $i++) {
     if ($rid_arrTyp[$i] == 1) {
         $rid_arrTyp[$i] = "checked";
@@ -20,6 +21,26 @@ for ($i = 0; $i < 5; $i++) {
 
 $form = '<form name="riddleCatChange" method ="post" id="ridCatForm">';
 $form .= '<table>';
+
+//language
+$form .= '<tr>';
+$form .= '<td>';
+$form .= '<span id="ridSpan">Language</span>';
+$form .= '</td>';
+$form .= '<td>';
+ $form.=' <select name="lang"  id="ridLang" onchange="rid_change(' . $LinkId . ')">';
+         if($rid_lang == 'de-DE'){
+         $form .= ' <option  value="en-US">English</option>';
+          $form .= '<option selected value="de-DE">Deutsch</option>';
+         } else{
+          $form .= ' <option selected value="en-US">English</option>';
+          $form .= '<option value="de-DE">Deutsch</option>';
+         }
+ $form.= '</select>';
+ 
+$form .= '</td>';
+$form .= '</tr>';
+
 //type
 $form .= '<tr>';
 $form .= '<td>';

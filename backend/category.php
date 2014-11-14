@@ -130,7 +130,7 @@ function rid_yourAddedCategories(){
              for($b=0;is_array($arr_) && $b< count($arr_);$b++){    
             
                 echo '<div class="addedRiddlePost_">';
-                echo "<div class='addedRiddle__' id='rid_yourCatPostNav__".$b."' onclick='rid_ShowFormPage(\"".$b."\")'>"; //onclick='rid_ShowForm(\"".$rid_frameSource."\")'
+                echo "<div class='addedRiddle__' id='rid_yourCatPostNav__".$b.$post->ID."' onclick='rid_ShowFormPage(\"".$b.$post->ID."\")'>"; //onclick='rid_ShowForm(\"".$rid_frameSource."\")'
                     
                 $rid_src = $arr_[$b]['src'];
                      
@@ -164,11 +164,11 @@ function rid_yourAddedCategories(){
                 $arr_= get_metadata('post', $post->ID, 'metaRid' , true);
         
                 $t = $b;
-                echo '<div class="rid_yourCatPost_" id="rid_yourCatPost__'.$b.'">';
+                echo '<div class="rid_yourCatPost_" id="rid_yourCatPost__'.$b.$post->ID.'">';
                 $rid_frameSource = $arr_[$b]['src'];
       
-                $LinkId = "'rid_yourCatPost__".$b."'";
-                $rid_ID = $b;
+                $LinkId = "'rid_yourCatPost__".$b.$post->ID."'";
+                $rid_ID = $b.$post->ID;
                 
                   $ridDivID =  '_'.$rid_ID;
                 include('formCat.php'); 
