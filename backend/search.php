@@ -2,6 +2,7 @@
 
 wp_enqueue_script('preview-script', plugins_url('/js/prev.js', __FILE__), false, '1.0.0');
 wp_enqueue_script('zClip-script', plugins_url('/js/zClip.js', __FILE__), false, '1.0.0');
+wp_enqueue_script('readmore', plugins_url('/js/readmore.js', __FILE__), false, '1.0.0');
 
 function riddle_search() {
 
@@ -9,9 +10,12 @@ function riddle_search() {
 
 
 
-    echo '<h1 style="margin-top: 30px; margin-bottom: 30px; ">Search Riddle</h1>';
+    echo '<h1 style="margin-top: 30px; margin-bottom: 30px; ">Add Riddle</h1>';
     echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
-    echo 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ';
+    echo 'Find and add a Riddle around almost any topic to any post, page or widget...';
+    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▼</span> </a>';
+    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▲</span> </a>';
+    echo '<div id="more" style="display: none"><p><ol><li>Just type in a few search terms, select your preferred language, then click ‘Search Riddle’.</li><li>Click ‘Get Shortcode’ - and just paste the resulting code anywhere in your Wordpress site.</li><li>Even quicker, you can select ‘Add to Post’ or ‘Add to Page’ to place that Riddle directly into an existing post or page.</li></ol></p></div>';
     echo '</div>';
     echo '<div style="width: 90%; max-width: 1100px;">';
     echo '<form method="POST" id="ridSearchForm">';

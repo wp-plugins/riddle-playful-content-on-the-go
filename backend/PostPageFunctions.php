@@ -534,7 +534,6 @@ function rid_createFrameCode($rid_src, $ridwidth, $ridheight) {
     }
     $temp .= '&wwidth=' . $ridwidth . '&wheight=' . $ridheight;
 
-
     $content = riddle_loadremote("http://www.riddle.com/Api/GenerateCode?" . $temp);
     $jsons = json_decode($content);
 

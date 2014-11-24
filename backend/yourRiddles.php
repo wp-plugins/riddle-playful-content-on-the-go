@@ -61,9 +61,20 @@ function your_riddles(){
          $posts2 = get_posts( $args2);
          
         echo '<div id="rid_Container">';
-        echo '<h1 style="margin-top: 30px; margin-bottom: 0px; "> Your Riddleposts</h2>';
-        echo '<div id="rid_text_below" style="  margin-top: 20px; margin-bottom: 0px;">';
-        echo 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ';
+        echo '<h1 style="margin-top: 30px; margin-bottom: 0px; "> Your embedded Riddles</h2>';
+      echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
+    echo 'Our dashboard shows all of the individual Riddles that you have embedded on your blog...';
+    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▼</span> </a>';
+    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▲</span> </a>';
+    echo '<div id="more" style="display: none"><p>Need to change the size of any Riddle?</p><ol><li>Click on the arrow next to a particular Riddle</li><li>Adjust the height and width by:
+<ul><li style="list-style-type: circle; margin-left: 20px;">entering a number in pixels (ex. 450) or percentage (75%)</li>
+<li style="list-style-type: circle; margin-left: 20px;">typing “auto” to use Riddle’s standard dimensions.</li></ul></li>
+<li>Click ‘Update’</li></ol>
+
+<p>Selecting the “Details” button will take directly to your page or post with the embedded Riddle, while clicking “Remove” will delete it.
+
+</p></div>';
+    echo '</div>';
         echo '</div>';    
              
      foreach($posts as $post){

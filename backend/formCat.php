@@ -225,10 +225,10 @@ $form .= '<td>';
 
 if($openLinks == 1 ){
 $form .= '<label><input type="radio" name="openLinks" value="yes" id="openLinksYes"  checked onchange="rid_change(' . $LinkId . ')">Open on riddle.com </label> ';
-$form .= '<label><input type="radio" name="openLinks" value="no" id="openLinksYes"  onchange="rid_change(' . $LinkId . ')">Open on your Website </label> ';
+$form .= '<label><input type="radio" name="openLinks" value="no" id="openLinksNo"  onchange="rid_change(' . $LinkId . ')">Open on your Website </label> ';
 } else{
     $form .= '<label><input type="radio" name="openLinks" value="yes"id="openLinksYes"  onchange="rid_change(' . $LinkId . ')">Open on riddle.com </label> ';
-$form .= '<label><input type="radio" name="openLinks" value="no" id="openLinksYes"  checked onchange="rid_change(' . $LinkId . ')">Open on your Website </label> ';
+$form .= '<label><input type="radio" name="openLinks" value="no" id="openLinksNo"  checked onchange="rid_change(' . $LinkId . ')">Open on your Website </label> ';
 }
 $form .= '</td>';
 $form .= '</tr>';

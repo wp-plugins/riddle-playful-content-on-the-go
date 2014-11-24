@@ -7,10 +7,13 @@ function rid_add_categories(){
   
 
       
-        echo '<div id="rid_Container" style="width: 850px">';
+        echo '<div id="rid_Container" >';
 echo'<h1 style="margin-top: 30px; margin-bottom: 30px; ">Add Category</h1>';
-  echo '<div id="rid_text_below_" style="  margin-top: 20px; margin-bottom: 20px;">';
-        echo 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ';
+ echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
+    echo 'Create a widget showing multiple Riddles from selected categories...';
+    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▼</span> </a>';
+    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▲</span> </a>';
+    echo '<div id="more" style="display: none"><p>We pre-selected the „Fun“ Category to get you started. Use this if you want fresh content on your site without having to work for it. We will show new Riddles as they are published for the selected categories. Use the language filter to ensure a good customer experience. Clicking on a Riddle in your widget will keep the user on your site and as usual, all social links will lead back directly to your site if you check the box „open links on your website“. You can add the widget to an existing page or post or generate a shortcode, which you can place anywhere you like. A small list of 4 Riddles will look great in a footer widget for example.</p></div>';
         echo '</div>';   
       include('form.php');      
        $r = rid_getPages();
@@ -63,9 +66,9 @@ function rid_yourAddedCategories(){
         $content = riddle_loadremote("http://www.riddle.com/Api/Categories");
         $jsons = json_decode($content);
         echo '<h1 style="margin-top: 30px; margin-bottom: 0px; margin-left: 20px; ">Your added Categories</h1>';
-          echo '<div id="rid_text_below" style="  margin-top: 30px; margin-bottom: 0px; margin-left: 20px;">';
+       /*   echo '<div id="rid_text_below" style="  margin-top: 30px; margin-bottom: 0px; margin-left: 20px;">';
         echo 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ';
-        echo '</div>';
+        echo '</div>';*/
 
          
          foreach($posts as $post){

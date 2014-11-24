@@ -1,5 +1,6 @@
 <?php
 wp_enqueue_script( 'z-script', plugins_url('/js/zClip.js', __FILE__ ), false, '1.0.0' );
+wp_enqueue_script( 'readmore', plugins_url('/js/readmore.js', __FILE__ ), false, '1.0.0' );
 $rservername = "www.riddle.com";
 
 add_action('admin_menu','riddleclosure3');

@@ -1,6 +1,6 @@
 <?php
 
-$form = '<form name="riddle_widg_wp" method ="POST">';
+$form = '<form name="riddle_widg_wp" method ="POST" style="width: 850px">';
 
             $form .= '<h3>Language</h3>';
            $form.=' <select name="lang" style=" " id="ridLang" onchange="rid_change(\'\')"> <option selected value="en-US">English</option> <option  value="de-DE">Deutsch</option> </select>';
@@ -45,10 +45,14 @@ $form = '<form name="riddle_widg_wp" method ="POST">';
                           $name = $json->rname;
                   }
                   
+                 
                
                  $form .= '<div id="'.$arr[$s].'"  onclick="rid_showSub1(\'_'.$arr[$s].'\')" class="typeCatCat"   <span style="font-weight: bold">'.$name.'<span style="font-size: 10px">▼</span> </span> </div>'; 
-            
-                  $form .= '<div id="_'.$arr[$s].'" class="rid_ContainerSubcategory_">';
+             if($arr[$s] == 1){
+                  $form .= '<div id="_'.$arr[$s].'" class="rid_ContainerSubcategory_" style="display:block">';
+             } else{
+                 $form .= '<div id="_'.$arr[$s].'" class="rid_ContainerSubcategory_">';
+             }
                
                   $z = 0;
                   foreach ($jsons->categories as $json) {
@@ -127,7 +131,7 @@ $form = '<form name="riddle_widg_wp" method ="POST">';
 
         
       
-        $form .= '<div id="ridPrevStyle">';
+        $form .= '<div id="ridPrevStyle" style="width: 850px">';
         $frame = '<iframe class="preview" width="100%" height="255px" src="http://www.riddle.com/Embed/List/preview?numitems=4&riddleLayout=0&riddleTypTop10=1&riddleTypTests=0&riddleTypQuiz=0&riddleTypPoll=0&riddleTypRhn=0&riddleCat1=1&riddleCat6=0&riddleCat7=0&riddleCat2=0&riddleCat8=0&riddleCat9=0&riddleCat10=0&riddleCat11=0&riddleCat3=0&riddleCat29=0&riddleCat28=0&riddleCat13=0&riddleCat14=0&riddleCat27=0&riddleCat16=0&riddleCat17=0&riddleCat18=0&riddleCat20=0&riddleCat21=0&riddleCat24=0&riddleCat25=0&riddleCat26=0&riddleCat42=0&riddleCat43=0&riddleCat4=0&riddleCat22=0&riddleCat23=0&riddleCat40=0&riddleCat5=0&riddleCat31=0&riddleCat30=0&riddleCat32=0&riddleCat33=0&riddleCat34=0&riddleCat35=0&riddleCat36=0&riddleCat15=0&riddleCat12=0&riddleCat37=0&riddleCat38=0&riddleCat39=0&riddleCat41=0&riddleCat19=0&riddleCat48=0&riddleCat44=0&riddleCat45=0&riddleCat46=0&riddleCat51=0&open=1&lang=en-US" ohref="/Embed/List/preview" style="border: medium none; width: 100%; height: 255px;" border="0"></iframe>';
         $form .= $frame;
         $form .= '</div>';

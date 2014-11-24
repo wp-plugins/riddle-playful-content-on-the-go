@@ -1,4 +1,5 @@
 
+ 
 function rid_change(id) {
 
     if (id != "") {
@@ -49,14 +50,14 @@ function rid_change(id) {
 
 
 
-    if (jQuery('#openLinksYes').is(':checked')) {
+    if (  document.querySelector(id+' input[name="openLinks"]:checked').value == 'yes') {
         link += 'open=1&';
     }
     else {
         link += 'open=0&';
     }
 
-    link += "lang=" + jQuery(' #ridLang').val() + "&";
+    link += "lang=" + jQuery(id + ' #ridLang').val() + "&";
 
     frame = 'http://www.riddle.com/Embed/List/preview?' + link;
     frame = frame.substring(0, frame.length - 1);
@@ -107,12 +108,13 @@ function rid_retFrame() {
         }
     });
 
-    if (jQuery('#openLinksYes').is(':checked')) {
+    if (  document.querySelector(' input[name="openLinks"]:checked').value == 'yes') {
         link += 'open=1&';
     }
     else {
         link += 'open=0&';
     }
+
     link += "lang=" + jQuery(' #ridLang').val() + "&";
 
     frame = 'http://www.riddle.com/Embed/List/preview?' + link;
@@ -237,6 +239,18 @@ function rid_ShowFormPage(nrOfPost) {
     jQuery('.addedRiddle__').css('background-color', 'transparent');
     jQuery('.addedRiddle1__').css('background-color', 'transparent');
     jQuery('#rid_yourCatPostNav__' + nrOfPost).css('background-color', '#bbb');
+    
+    var i = 0;
+  //  alert('#rid_yourCatPost__'+nrOfPost + '  .typeCat');
+    jQuery('#rid_yourCatPost__'+nrOfPost + '  .typeCat').each(function (index, item) {
+            if (jQuery(item).is(':checked')) { 
+                if(i == 0){
+                  id = jQuery(item).parent().parent().attr('id');
+                  jQuery('#'+id).css('display', 'block');
+                   i++;
+                }
+            }
+       });
 
 }
 
@@ -249,6 +263,18 @@ function rid_ShowFormPost(nrOfPost) {
     jQuery('.addedRiddle__').css('background-color', 'transparent');
     jQuery('#rid_yourCatPostNav1__' + nrOfPost).css('background-color', 'transparent');
     jQuery('#rid_yourCatPostNav2__' + nrOfPost).css('background-color', '#bbb');
+    
+    var i = 0;
+        jQuery('#rid_yourCatPost2__'+nrOfPost + '  .typeCat').each(function (index, item) {
+            if (jQuery(item).is(':checked')) { 
+                if(i == 0){
+                  id = jQuery(item).parent().parent().attr('id');
+           
+                  jQuery('#'+id).css('display', 'block');
+                   i++;
+                }
+            }
+       });
 
 }
 
@@ -290,19 +316,29 @@ window.onload = function () {
 };
 
 function rid_showSub(id) {
-    if ((jQuery(" .rid_ContainerSubcategory").length)) {
-        jQuery(" .rid_ContainerSubcategory").css('display', 'none');
-    }
-
-    jQuery('#' + id).css('display', 'block');
+if( jQuery('#' + id).css('display') == 'block'){
+    jQuery('#' + id).css('display', 'none');
+     jQuery(" .rid_ContainerSubcategory").css('display', 'none');
+    
+}else{
+     jQuery(" .rid_ContainerSubcategory").css('display', 'none');
+       jQuery('#' + id).css('display', 'block');
+}
 }
 
 function rid_showSub1(id) {
-    if ((jQuery(" .rid_ContainerSubcategory_").length)) {
+    /*if ((jQuery(" .rid_ContainerSubcategory_").length) ) {
         jQuery(" .rid_ContainerSubcategory_").css('display', 'none');
-    }
+    }*/
 
-    jQuery('#' + id).css('display', 'block');
+if( jQuery('#' + id).css('display') == 'block'){
+    jQuery('#' + id).css('display', 'none');
+     jQuery(" .rid_ContainerSubcategory_").css('display', 'none');
+    
+}else{
+     jQuery(" .rid_ContainerSubcategory_").css('display', 'none');
+       jQuery('#' + id).css('display', 'block');
+}
 }
 
 function rid_ShowAddButton(id) {
@@ -315,6 +351,8 @@ jQuery(document).ready(function () {
         path: 'http://www.steamdev.com/zclip/js/ZeroClipboard.swf',
         copy: jQuery('#ridPopUpTextbox').text()
     });
+    
+  
 //*/ The link with ID "copy-description" will copy
 // the text of the paragraph with ID "description"
 //jQuery('a#rid_CopytoClipboardButton').zclip({
@@ -355,4 +393,23 @@ function changeLang() {
 
         jQuery('#ridLang:nth-child(2)').attr("selected", "selected");
     }
+}
+
+
+function readmore(){
+
+
+
+jQuery('#more').show('slow');
+jQuery('#show').css('display', 'none');
+jQuery('#hide').css('display', 'inline');
+
+}
+
+
+function readless(){
+  jQuery('#more').hide('slow');
+jQuery('#hide').css('display', 'none');
+jQuery('#show').css('display', 'inline');
+
 }
