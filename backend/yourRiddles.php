@@ -62,10 +62,10 @@ function your_riddles(){
          
         echo '<div id="rid_Container">';
         echo '<h1 style="margin-top: 30px; margin-bottom: 0px; "> Your embedded Riddles</h2>';
-      echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
-    echo 'Our dashboard shows all of the individual Riddles that you have embedded on your blog...';
-    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▼</span> </a>';
-    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▲</span> </a>';
+      echo '<div id="rid_text_below"  style=" margin-top: 30px;  margin-bottom: 0px;">';
+   // echo 'Our dashboard shows all of the individual Riddles that you have embedded on your blog...';
+    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none; color: #000;">Our dashboard shows all of the individual Riddles that you have embedded on your blog...<span style=" color: #000; text-decoration: none;" >▼</span> </a>';
+    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none; color: #000;">Our dashboard shows all of the individual Riddles that you have embedded on your blog...<span style=" color: #000; text-decoration: none;" >▲</span> </a>';
     echo '<div id="more" style="display: none"><p>Need to change the size of any Riddle?</p><ol><li>Click on the arrow next to a particular Riddle</li><li>Adjust the height and width by:
 <ul><li style="list-style-type: circle; margin-left: 20px;">entering a number in pixels (ex. 450) or percentage (75%)</li>
 <li style="list-style-type: circle; margin-left: 20px;">typing “auto” to use Riddle’s standard dimensions.</li></ul></li>
@@ -75,7 +75,7 @@ function your_riddles(){
 
 </p></div>';
     echo '</div>';
-        echo '</div>';    
+       
              
      foreach($posts as $post){
    
@@ -387,8 +387,67 @@ function your_riddles(){
         //wenn page auf die gleiche page bzw post auf den gleichen post: nix, nur den jeweiligen riddle updaten
         
           if(($rid_oldPostID == $rid_newPostID) && ($rid_oldPostType=='page') ){
+              
+              $arr = get_metadata('post', $rid_newPostID, 'metaRid2', true);
+             
+              $c = $_POST["rid_hidIDMet"];
+         
+                $arr[$c]['data_game'] = $newpostriddle["data_game"];
+            $arr[$c]['data_height'] = $newpostriddle["data-height"];
+            $arr[$c]['data_width'] = $newpostriddle["data-width"];
+            $arr[$c]['data_id'] = $_POST["addedRiddleID"];
+            update_metadata('post', $rid_newPostID, 'metaRid2', $arr);
+            
+             $rid_postcontent = "";
+        $arr_new = get_metadata('post', $rid_newPostID, 'metaRid2', true);
+        for ($b = 0; is_array($arr_new) && $b < count($arr_new); $b++) {
+            $pr = getPostriddleCode($arr_new[$b]["data_id"], $arr_new[$b]["data_width"], $arr_new[$b]["data_height"]);
+            $rid_postcontent .= '<p>' . $pr["code"] . '</p>';
+        }
+
+
+        $page = array(
+            'ID' => $rid_newPostID,
+            'post_content' => $rid_postcontent,
+            'post_type' => 'page',
+        );
+
+             wp_update_post($page);
+    echo '<script type="text/javascript">rid_refresh()</script>';
    
-          rid_updatePost($rid_newPostID, $newpostriddle["code"], 'page', $newpostriddle);
+          //rid_updatePost($rid_newPostID, $newpostriddle["code"], 'page', $newpostriddle);
+        }
+          if(($rid_oldPostID == $rid_newPostID) && ($rid_oldPostType=='post') ){
+   
+              
+               $arr = get_metadata('post', $rid_newPostID, 'metaRid1', true);
+             
+              $c = $_POST["rid_hidIDMet"];
+         
+                $arr[$c]['data_game'] = $newpostriddle["data_game"];
+            $arr[$c]['data_height'] = $newpostriddle["data-height"];
+            $arr[$c]['data_width'] = $newpostriddle["data-width"];
+            $arr[$c]['data_id'] = $_POST["addedRiddleID"];
+            update_metadata('post', $rid_newPostID, 'metaRid1', $arr);
+            
+             $rid_postcontent = "";
+        $arr_new = get_metadata('post', $rid_newPostID, 'metaRid1', true);
+       // var_dump($arr_new);
+      
+        for ($b = 0; is_array($arr_new) && $b < count($arr_new); $b++) {
+               $pr = getPostriddleCode($arr_new[$b]["data_id"], $arr_new[$b]["data_width"], $arr_new[$b]["data_height"]);
+               $rid_postcontent .= '<p>' . $pr["code"] . '</p>';
+        }
+       // echo $rid_postcontent;
+
+        $page = array(
+            'ID' => $rid_newPostID,
+            'post_content' => $rid_postcontent,
+            'post_type' => 'post',
+        );
+        wp_update_post($page);
+    echo '<script type="text/javascript">rid_refresh()</script>';
+         // rid_updatePost($rid_newPostID, $newpostriddle["code"], 'page', $newpostriddle);
         }
   }
 

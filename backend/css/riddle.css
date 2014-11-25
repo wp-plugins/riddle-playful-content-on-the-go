@@ -118,7 +118,7 @@
 .addedRiddle_{
 
     width: 200px;
-    height: 180px;
+    height: 205px;
     float: left; 
     padding: 10px;
     position: relative;
@@ -137,7 +137,7 @@
 .addedRiddle__{
 
     width: 200px;
-    height: 180px;
+    height: 205px;
     float: left;
     margin: 20px;
 
@@ -237,7 +237,7 @@
 
 #rid_post{
     margin: 2px;
-    //  padding-left: -2px;
+     padding-left: 6px;
 }
 
 #ridCatFormLeft{
@@ -288,7 +288,7 @@
 
 #textRidSearch{
 
-    height: 60px;
+   height:75px;
     width: 180px;
 }
 

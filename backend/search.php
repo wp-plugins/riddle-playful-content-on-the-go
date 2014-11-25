@@ -12,9 +12,9 @@ function riddle_search() {
 
     echo '<h1 style="margin-top: 30px; margin-bottom: 30px; ">Add Riddle</h1>';
     echo '<div id="rid_text_below"  style=" margin-top: 20px;  margin-bottom: 20px;">';
-    echo 'Find and add a Riddle around almost any topic to any post, page or widget...';
-    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▼</span> </a>';
-    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none;"><span style=" color: #000; text-decoration: none;" >▲</span> </a>';
+   // echo 'Find and add a Riddle around almost any topic to any post, page or widget...';
+    echo   '<a href="#" onclick="readmore()" id="show" style="text-decoration: none; color: #000;">Find and add a Riddle around almost any topic to any post, page or widget...<span style=" color: #000; text-decoration: none;" >▼</span> </a>';
+    echo   '<a href="#" onclick="readless()" id="hide" style="display:none; text-decoration: none; color: #000;">Find and add a Riddle around almost any topic to any post, page or widget...<span style=" color: #000; text-decoration: none;" >▲</span> </a>';
     echo '<div id="more" style="display: none"><p><ol><li>Just type in a few search terms, select your preferred language, then click ‘Search Riddle’.</li><li>Click ‘Get Shortcode’ - and just paste the resulting code anywhere in your Wordpress site.</li><li>Even quicker, you can select ‘Add to Post’ or ‘Add to Page’ to place that Riddle directly into an existing post or page.</li></ol></p></div>';
     echo '</div>';
     echo '<div style="width: 90%; max-width: 1100px;">';
@@ -130,13 +130,13 @@ function showSearchedRiddles($ridID) {
         $f .= '<div id="addPage_' . $json->uid . '" class="ridAddButtonHidden">';
         $option = rid_getPages();
         $f.= $option;
-        $f.= '<input type="submit" class="button" style=" margin-top: 5px; width:42px" value="Add!" name="rid_page_implement"> ';
+        $f.= '<input type="submit" class="button" style=" margin-top: 5px; width:42px; padding-left: 7px;" value="Add!" name="rid_page_implement"> ';
         $f .= '</div>';
 
         $f .= '<div id="addPost_' . $json->uid . '" class="ridAddButtonHidden">';
         $opt = rid_getPosts();
         $f.= $opt;
-        $f.= '<input type="submit" class="button" style=" margin-top: 5px; width:42px" value="Add!" name="rid_post_implement"> ';
+        $f.= '<input type="submit" class="button" style=" margin-top: 5px; width:42px; padding-left: 7px;" value="Add!" name="rid_post_implement"> ';
         $f .= '</div>';
         //  }
         $temp1 = getPostriddleCode($ridID, "100%", "auto");

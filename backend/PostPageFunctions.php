@@ -243,8 +243,8 @@ function rid_addToPost($ridPid, $ridPcontent, $ridTitle, $posttype, $postriddle,
             $c = count($arr);
 
             $arr[$c]['data_game'] = $postriddle["data_game"];
-            $arr[$c]['data_height'] = $postriddle["data-width"];
-            $arr[$c]['data_width'] = $postriddle["data-height"];
+            $arr[$c]['data_height'] = $postriddle["data-height"];
+            $arr[$c]['data_width'] = $postriddle["data-width"];
             $arr[$c]['data_id'] = $rid;
             update_metadata('post', $ridPid, 'metaRid1', $arr);
         }
@@ -269,21 +269,8 @@ function rid_updatePost($ridPid, $ridPcontent, $posttype, $postriddle, $ridFrame
         update_metadata('post', $ridPid, 'ridFrameSrc', $ridFrameCode["src"]);
         update_metadata('post', $ridPid, 'ridFrameCode', $ridFrameCode["code"]);
     } else if ($posttype == 'page') {
-        $rid_postcontent = "";
-        $arr_new = get_metadata('post', $ridPid, 'metaRid', true);
-        for ($b = 0; is_array($arr_new) && $b < count($arr_new); $b++) {
-            // $ridCode = rid_createFrameCode($arr_new[$b]['src'], '100%', '100%');
-            $rid_postcontent .= '<p>' . $ridFrameCode['recCodeFinal'] . '</p>';
-        }
-
-
-        $page = array(
-            'ID' => $ridPid,
-            'post_content' => $rid_postcontent,
-            'post_type' => $posttype,
-        );
-
-        if (isset($_POST["rid_hidIDMet"])) {
+        
+            if (isset($_POST["rid_hidIDMet"])) {
             //   $ridFrameCode = rid_createFrameCode($_POST["rid_hidFr"], '100%', '100%');
 
             $i = $_POST["rid_hidIDMet"];
@@ -294,12 +281,10 @@ function rid_updatePost($ridPid, $ridPcontent, $posttype, $postriddle, $ridFrame
             $arr[$i]['ridHeight'] = $ridFrameCode["ridHeight"];
             update_metadata('post', $ridPid, 'metaRid', $arr);
         }
-    } else if ($posttype == 'post') {
-        #echo $ridPcontent;
         $rid_postcontent = "";
-        $arr_new = get_metadata('post', $ridPid, 'metaRidP', true);
+        $arr_new = get_metadata('post', $ridPid, 'metaRid', true);
         for ($b = 0; is_array($arr_new) && $b < count($arr_new); $b++) {
-            //  $ridCode = rid_createFrameCode($arr_new[$b]['src'], '100%', '100%');
+             $ridFrameCode = rid_createFrameCode($arr_new[$b]['src'], $arr_new[$b]['width'], $arr_new[$b]['height']);
             $rid_postcontent .= '<p>' . $ridFrameCode['recCodeFinal'] . '</p>';
         }
 
@@ -310,7 +295,10 @@ function rid_updatePost($ridPid, $ridPcontent, $posttype, $postriddle, $ridFrame
             'post_type' => $posttype,
         );
 
-        if (isset($_POST["rid_hidIDMet"])) {
+    
+    } else if ($posttype == 'post') {
+        
+                if (isset($_POST["rid_hidIDMet"])) {
             //$ridFrameCode = rid_createFrameCode($_POST["rid_hidFr"], '100%', '100%');
 
             $i = $_POST["rid_hidIDMet"];
@@ -322,6 +310,22 @@ function rid_updatePost($ridPid, $ridPcontent, $posttype, $postriddle, $ridFrame
 
             update_metadata('post', $ridPid, 'metaRidP', $arr);
         }
+        #echo $ridPcontent;
+        $rid_postcontent = "";
+        $arr_new = get_metadata('post', $ridPid, 'metaRidP', true);
+        for ($b = 0; is_array($arr_new) && $b < count($arr_new); $b++) {
+            $ridFrameCode = rid_createFrameCode($arr_new[$b]['src'], $arr_new[$b]['width'], $arr_new[$b]['height']);
+            $rid_postcontent .= '<p>' . $ridFrameCode['recCodeFinal'] . '</p>';
+        }
+
+
+        $page = array(
+            'ID' => $ridPid,
+            'post_content' => $rid_postcontent,
+            'post_type' => $posttype,
+        );
+
+
     } else {
         /*   else if ($posttype == 'wp_riddlepost'){
           /*        $rid_postcontent ="";
