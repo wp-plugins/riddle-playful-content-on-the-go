@@ -61,18 +61,22 @@
     float: right;
 }
 .riddleplugin .riddleheader {
-    background-color: #35B5EB
+    background-color: #286de1;
+    margin-bottom: 35px;
 }
 .riddleheader {
     color: #FFFFFF;
-    height: 90px;
+    height: 55px;
     padding: 10px;
 }
 .riddleheader h2 {
     color: white;
-    line-height: 90px;
+    line-height: 37px;
 }
 
+#toplevel_page_riddlemain .wp-first-item {
+    display: none;
+}
 
 #footer-thankyou{
 
@@ -83,316 +87,7 @@
     visibility: hidden;
 }
 
-#text_searchRiddle{
 
-    width: 70%;
-    height: 50px;
-    max-width: 760px;
-}
-
-#sub_searchRiddle{
-
-    width: 20%;
-    height: 50px;
-    max-width: 150px;
-    min-width: 100px;
-}
-
-.riddle_element{
-
-    width: 200px;
-    height: 320px;
-    float: left;
-    margin: 10px;
-}
-
-#riddleSearch{
-    max-width: 1100px;
-    width: 90%;
-    position: relative;
-    left: -8px;
-    margin-top: 30px;
-    // margin-left: 40px;
-}
-
-.addedRiddle_{
-
-    width: 200px;
-    height: 205px;
-    float: left; 
-    padding: 10px;
-    position: relative;
-    left: -5px;
-}
-.addedRiddle_:hover{
-
-    cursor: pointer;
-
-}
-.addedRiddle__:hover{
-
-    cursor: pointer;
-
-}
-.addedRiddle__{
-
-    width: 200px;
-    height: 205px;
-    float: left;
-    margin: 20px;
-
-    padding: 10px;
-    position: relative;
-    left: -5px;
-
-}
-.addedRiddle1__{
-
-    width: 200px;
-    height: 180px;
-    float: left;
-    margin: 20px;
-
-    padding: 10px;
-    position: relative;
-    left: -5px;
-
-}
-.addedRiddlePost{
-
-    width: 90%;
-    height: 310px;
-    float: left;
-    border-bottom: 1px #CCCCCC solid;
-    padding-bottom: 20px;
-    padding-top: 30px;
-
-}
-.addedRiddlePost:last-child{
-    border-bottom: 0px ;
-}
-
-.addedRiddlePost_{
-
-    width: 90%;
-    height: 310px;
-    float: left;
-    border-bottom: 1px #CCCCCC solid;
-    padding-bottom: 30px;
-    padding-top: 5px;
-
-}
-.addedRiddlePost1_{
-
-    width: 90%;
-    height: 310px;
-    float: left;
-    border-bottom: 1px #CCCCCC solid;
-    padding-bottom: 30px;
-    padding-top: 5px;
-
-}
-.addedRiddlePost1_:last-child{
-    border-bottom: 0px ;
-
-}
-
-.addedRiddlePostForm{
-    visibility: hidden;
-    position: relative;
-    left: 70px;
-
-}
-
-#rid_yourCatLeft{
-    width: 300px;
-    float: left;
-    height: 100%;
-}
-#rid_yourCatRight{
-    float: left;
-    margin-top: 30px;
-    height: 100%;
-}
-
-
-
-.rid_yourCatPost_{
-    visibility: hidden;
-    position: relative;
-    width: 100%;
-    margin: 10px;
-    padding-bottom: 40px;
-    top:-100px;
-    left: 40px;
-} .rid_yourCatPost1_{
-    visibility: hidden;
-    position: relative;
-    width: 100%;
-    margin: 10px;
-    padding-bottom: 40px;
-    top:-100px;
-    left: 40px;
-}
-
-#rid_post{
-    margin: 2px;
-     padding-left: 6px;
-}
-
-#ridCatFormLeft{
-    float: left;
-    width: 200px;
-    margin-top: -17px;
-
-}
-#ridCatFormRight{
-    float: left;
-    width: 300px;
-    margin: 40px;
-}
-
-
-#rid_Container{
-    //  width: 90%;
-    margin-left: 20px;
-}
-
-#rid_Container:last-child{
-    border-bottom: 0px;
-
-}
-
-#ridPrevStyle{
-    position: relative;
-    top: 20px;
-    // left: -40px;
-    background-color: transparent;
-}
-#ridCatFormBottom{
-    position: relative;
-    width: 700px;
-    margin-top: 70px;
-    //left: 80px;
-    top: 20px;
-
-}
-#ridCatFormBottom1{
-    position: relative;
-    width: 700px;
-    margin: 40px;
-    top: 30px;
-    left: -170px;
-
-}
-
-#textRidSearch{
-
-   height:75px;
-    width: 180px;
-}
-
-#pageSelection{
-
-    width: 130px;
-    height: 28px;
-    margin-right: 5px;
-    margin-top: 5px;
-
-}
-
-#rid_selPageStyle{
-    // left: 20px;
-    position: relative;
-}
-
-#rid_addedCatStyle{
-    text-align: center;
-    margin: 10px;
-    font-weight: bold;
-}
-
-#ridArrowRight{
-    position: absolute;
-    left: 230px;
-    top: 60px;
-}
-
-#ridCatForm{
-    position: relative;
-    top: 80px;
-    left: 40px;
-}
-
-#ridCatForm label{
-    margin-right: 10px;
-}
-
-#ridSpan{
-    margin-right: 40px;
-    font-weight: 800;
-}
-
-td{
-    padding-bottom: 7px;
-}
-
-#ridPopUp{
-    position: fixed;
-    left: 30%;
-    top: 30%;
-    border: 1px #CCCCCC solid;
-    width: 480px;
-    height: 300px;
-    background-color: white;
-    padding: 30px;
-}
-
-#ridVideoFrame{
-    position: relative;
-    margin-left: 10px;
-    margin-top: 30px;
-}
-
-#rid_text_below{
-
-    width: 75%;
-    padding: 10px;
-    max-width: 1035px;
-
-    background-color: #dfdfdf;
-}
-
-#rid_text_below_{
-
-    width: 100%;
-    padding: 10px;
-    max-width: 1035px;
-
-    background-color: #dfdfdf;
-}
-
-#postSite{
-    margin-top: 10px;
-}
-
-.rid_ContainerSubcategory{
-    display: none;
-    position: absolute;
-    top: 110px;
-}
-
-.rid_ContainerSubcategory_{
-    display: none;
-    position: absolute;
-    top: 22px;
-}
-
-.typeCatCat{
-    float: left;
-    margin-right: 10px;
-    cursor: pointer;
-}
 
 
 
@@ -400,6 +95,141 @@ td{
     display: none;
 }
 
+.rid_Container {
+    margin-top: 30px;
+}
+.formLogin {
+  margin-top: 30px;
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.formLogin input[type="text"], .formLogin input[type="password"] {
+  float: left;
+  height: 40px;
+  margin-bottom: 10px;
+  width: 69%;
+}
 
 
+.formLogin label {
+  width: 30%;
+  display: inline-block;
+  float: left;
+  line-height: 40px;
+}
+
+.formLogin input[type="submit"] {
+  margin-right: 5px;
+  display: inline-block;
+  float: right;
+}
+
+.wp_error {
+  border: 1px solid #c00;
+  max-width: 476px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.containerMyRiddles {
+  margin-top: 40px;
+  display: inline-block;
+  height: auto;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.containerMyRiddles .riddleItemContainer {
+  width: 100%;
+  margin-bottom: 35px;
+  float: left;
+  /* margin-right: 10px; */
+}
+.containerMyRiddles .riddleItemContainer .image {
+  width: 160px;
+  height: 160px;
+  background-size:cover;
+  float: left;
+ 
+}
+
+.containerMyRiddles .riddleItemContainer  .details {
+  float: left;
+  background-color: #fff;
+  max-width: 320px;
+  height: 100%;
+  display: inline-block;
+  min-width: 300px;
+  height: 160px;
+    padding-left: 20px;
+}
+.riddleItemContainer .details .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 3px;
+}
+
+.riddleItemContainer .details .description {
+  width: 320px;
+}
+
+.riddleItemContainer  .buttons {
+  height: 140px;
+  width: 200px;
+  float: left;
+  background-color: #fff;
+  padding-top: 20px;
+}
+
+.riddleItemContainer .buttons select {
+  width: 136px;
+  margin-top: 10px;
+  margin-left: -1px;
+}
+
+.riddleItemContainer .buttons input[type="submit"] {
+  
+  margin-top: 10px;
+  
+}
+
+div#ridPopUp {
+  background-color: #fff;
+  position: fixed;
+  top: 30%;
+  left: 34%;
+  z-index:9999;
+  padding:20px;
+  display: none;
+}
+
+#ridPopUpWrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: #000;
+  opacity: 0.7;
+  left: 0px;
+  display: none;
+}
+
+textarea#ridPopUpTextbox {
+  width: 100%;
+}
+
+#ridPopUp .button {
+  margin-top: 10px;
+}
+#ridPopUp .button.right {
+    float:right;
+}
+input.button.button-primary.shortcodeButton {
+  margin-top: 5px;
+  width: 190px;
+}
 #CategWidth{position:relative; width:100%;}

@@ -3,15 +3,17 @@
 Plugin URI: http://riddle.com/
 Description: Questionare plugin for riddle.com games
 Version: 2.0
-Author: Daniel Moertenschlag
-Author URI: http://www.webresource.at
+Author: riddleinc
+Author URI: http://www.riddle.com
 License: GPLv2 or later
 */
+
+
 require_once "frontend/frontend.php";
-require_once "backend/PostPageFunctions.php";
+require_once "backend/functions.php";
 require_once "backend/backend.php";
-require_once "backend/search.php";
-require_once "backend/category.php";
-require_once "backend/yourRiddles.php";
+require_once "backend/myRiddles.php";
+require_once "backend/allRiddles.php";
+require_once "backend/login.php";
 
 ?>
